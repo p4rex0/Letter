@@ -1,11 +1,12 @@
 :root {
   --bg-deep: #1a1218;
   --bg-card: rgba(42, 32, 44, 0.65);
-  --bg-paper: #f5f0eb;
-  --ink: #1e161b;
-  --ink-body: #342a31;
-  --ink-muted: #6e5f68;
-  --ink-emphasis: #5c3545;
+  --bg-paper: #fffefb;
+  --ink: #0f0d10;
+  --ink-body: #1f1b22;
+  --ink-muted: #6a626e;
+  --ink-emphasis: #9a4d62;
+  --ink-strong: #0a080c;
   --accent: #c97b8a;
   --accent-soft: rgba(201, 123, 138, 0.35);
   --gold: #d4a574;
@@ -319,37 +320,69 @@ a.letter-card:focus-visible {
   font-size: clamp(1.75rem, 4vw, 2.35rem);
   font-weight: 600;
   margin: 0 0 1.5rem;
-  line-height: 1.2;
+  line-height: 1.25;
   color: var(--ink);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
 }
 
 .paper-body {
   font-family: var(--font-display);
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: 1.22rem;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
   word-break: break-word;
   color: var(--ink-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .paper-body p {
-  margin: 0 0 1.05em;
+  margin: 0 0 1.1em;
+}
+
+.paper-body strong,
+.paper-body b {
+  font-weight: 600;
+  color: var(--ink-strong);
+}
+
+.paper-body em,
+.paper-body i {
+  font-style: italic;
+  color: var(--ink-emphasis);
+}
+
+.paper-body mark {
+  padding: 0.05em 0.2em;
+  border-radius: 3px;
+  background: rgba(201, 123, 138, 0.2);
+  color: var(--ink-strong);
 }
 
 .paper-affirmations {
-  margin-top: 0.5rem;
-  padding: 1.15rem 1.25rem;
-  border-left: 3px solid var(--accent);
-  border-radius: 0 8px 8px 0;
-  background: rgba(201, 123, 138, 0.08);
+  margin-top: 0.75rem;
+  padding: 1.25rem 1.35rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  background: linear-gradient(105deg, rgba(201, 123, 138, 0.14), rgba(212, 165, 116, 0.1));
 }
 
 .paper-affirmations p {
-  margin: 0 0 0.55em;
-  color: var(--ink-emphasis);
+  margin: 0 0 0.6em;
+  color: var(--ink);
   font-weight: 600;
-  font-size: 1.12rem;
-  line-height: 1.55;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+}
+
+.paper-affirmations p strong,
+.paper-affirmations p b {
+  color: var(--ink-emphasis);
+  font-weight: 700;
 }
 
 .paper-affirmations p:last-child {
@@ -418,5 +451,14 @@ a.letter-card:focus-visible {
 @media (max-width: 520px) {
   .paper {
     padding: 1.5rem 1.35rem 2.5rem;
+  }
+
+  .paper-body {
+    font-size: 1.18rem;
+    line-height: 1.9;
+  }
+
+  .paper-affirmations p {
+    font-size: 1.12rem;
   }
 }
