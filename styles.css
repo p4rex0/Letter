@@ -12,6 +12,7 @@
   --gold: #d4a574;
   --radius: 18px;
   --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.35);
+  --font-chapter: Georgia, "Times New Roman", Times, serif;
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-ui: "Outfit", system-ui, sans-serif;
 }
@@ -195,6 +196,82 @@ body {
   font-size: 0.95em;
 }
 
+.home-sections {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .home-sections {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.content-box {
+  padding: 1.5rem 1.35rem 1.35rem;
+  border-radius: calc(var(--radius) + 4px);
+  background: rgba(32, 24, 34, 0.55);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: var(--shadow-soft);
+}
+
+.content-box--book {
+  border-color: rgba(212, 165, 116, 0.22);
+  background: linear-gradient(160deg, rgba(42, 32, 44, 0.72), rgba(52, 38, 32, 0.55));
+}
+
+.content-box--letters {
+  border-color: rgba(201, 123, 138, 0.22);
+  background: linear-gradient(160deg, rgba(42, 32, 44, 0.72), rgba(44, 30, 38, 0.55));
+}
+
+.content-box__header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.content-box__kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+}
+
+.content-box--letters .content-box__kicker {
+  color: var(--accent);
+}
+
+.content-box__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  line-height: 1.15;
+  color: #f5eef2;
+}
+
+.content-box__subtitle {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: #b8aab5;
+}
+
+.content-box .letter-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1100px) {
+  .content-box .letter-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .letter-grid {
   display: grid;
   gap: 1.25rem;
@@ -226,6 +303,14 @@ a.letter-card::before {
   height: 3px;
   background: linear-gradient(90deg, var(--accent), var(--gold));
   opacity: 0.85;
+}
+
+a.letter-card--book::before {
+  background: linear-gradient(90deg, var(--gold), #e8c4a0);
+}
+
+a.letter-card--book:hover {
+  border-color: rgba(212, 165, 116, 0.4);
 }
 
 a.letter-card:hover {
@@ -389,6 +474,53 @@ a.letter-card:focus-visible {
   margin-bottom: 0;
 }
 
+.paper--chapter .paper-title,
+.paper--chapter .paper-body {
+  font-family: var(--font-chapter);
+  color: #0a0a0a;
+}
+
+.paper--chapter .paper-title {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.paper--chapter .paper-body {
+  font-size: 1.125rem;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+
+.paper--chapter .paper-body p {
+  margin: 0 0 1.15em;
+}
+
+.paper--chapter .paper-body .chapter-lead {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1.5em;
+}
+
+.paper--chapter .paper-body .chapter-dialogue {
+  margin-left: 1.25rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(10, 10, 10, 0.12);
+}
+
+.paper--chapter .paper-body .chapter-break {
+  text-align: center;
+  margin: 2em 0;
+  letter-spacing: 0.35em;
+  color: #0a0a0a;
+  opacity: 0.35;
+}
+
+.paper--chapter .paper-body strong,
+.paper--chapter .paper-body b {
+  color: #000;
+  font-weight: 700;
+}
+
 .paper-footer {
   margin-top: 2.5rem;
   text-align: center;
@@ -460,5 +592,10 @@ a.letter-card:focus-visible {
 
   .paper-affirmations p {
     font-size: 1.12rem;
+  }
+
+  .paper--chapter .paper-body {
+    font-size: 1.05rem;
+    line-height: 1.95;
   }
 }
