@@ -501,6 +501,30 @@ a.letter-card:focus-visible {
   margin-bottom: 1.5em;
 }
 
+.paper--chapter .paper-body .chapter-section-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 2.25em 0 1em;
+  padding-bottom: 0.45em;
+  border-bottom: 1px solid rgba(10, 10, 10, 0.12);
+  color: #000;
+}
+
+.paper--chapter .paper-body .chapter-section-title:first-of-type {
+  margin-top: 1.5em;
+}
+
+.paper--chapter .paper-body .chapter-pullquote {
+  margin: 1.5em 0;
+  padding: 0.85em 1.15em;
+  font-size: 1.15rem;
+  font-style: italic;
+  border-left: 3px solid rgba(10, 10, 10, 0.2);
+  color: #000;
+}
+
 .paper--chapter .paper-body .chapter-dialogue {
   margin-left: 1.25rem;
   padding-left: 1rem;
